@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        fetch('/questions/all')
+            .then(response => response.json())
+            .then(data => printing(data)
+        );
+
+        function printing(lista) {
+            console.log(lista)
+            for (var i = 0; i < lista.length; i++) {
+                let newItem = document.createElement("div");
+                newItem.innerText = lista[i];
+                document.getElementById("result").appendChild(newItem);
+            }
+        }
+    </script>
+</body>
+</html>
